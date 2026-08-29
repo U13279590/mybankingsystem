@@ -1,0 +1,40 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Deposit </title>
+  <style>
+    body { font-family: Arial; max-width: 450px; margin: 50px auto; }
+    input, button { width: 100%; padding: 12px; margin: 8px 0; }
+    button { cursor: pointer; }
+    #result { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>Deposit Money — </h2>
+
+  <input id="account" placeholder="Account number">
+  <input id="amount" type="number" placeholder="Amount">
+
+  <button onclick="deposit()">Deposit</button>
+
+  <div id="result"></div>
+
+  <script>
+    function deposit() {
+      const account = document.getElementById("account").value;
+      const amount = Number(document.getElementById("amount").value);
+
+      if (!account || amount <= 0) {
+        document.getElementById("result").textContent =
+          "Enter a valid account number and amount.";
+        return;
+      }
+
+      document.getElementById("result").textContent =
+         deposit of R${amount.toFixed(2)} to account ${account} successful.;
+    }
+  </script>
+
+</body>
+</html>
